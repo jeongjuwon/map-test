@@ -34,6 +34,14 @@ function setMarker(lon, lat) {
     marker.setMap(map);
 }
 
+function setCenter(lon, lat) {
+    // 이동할 위도 경도 위치를 생성합니다
+    var moveLatLon = new daum.maps.LatLng(lon, lat);
+
+    // 지도 중심을 이동 시킵니다
+    map.setCenter(moveLatLon);
+}
+
 // 지도에 클릭 이벤트를 등록합니다
 // 지도를 클릭하면 마지막 파라미터로 넘어온 함수를 호출합니다
 daum.maps.event.addListener(map, 'click', function(mouseEvent) {
